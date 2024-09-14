@@ -8,10 +8,26 @@ class UnsortedArray : public Array<T, N> {
     private:    
         size_t _size = 0;
     public:
-        void insert(const T& new_value);
-        void remove(size_t pos);
-        void find();
 
+        /*
+         * Inserts new value into Array.
+         */
+        void insert(const T& new_value);
+
+        /*
+         * Removes value at index and shits all elements to the left.
+         */
+        void remove(size_t pos);
+
+        /*
+         * Attempts to find value in the array.
+         * TODO Implement Method
+         */
+        T& find();
+
+        /*
+         * Returns total of elements in the array.
+         */
         size_t size() const;
 };
 
