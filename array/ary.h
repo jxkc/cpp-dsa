@@ -5,10 +5,21 @@
 
 template <typename T, size_t N>
 class Array {
-    private:
+    protected:
         T _data[N];
-        size_t _size = 0;
+
     public:
+
+        /*
+         * Constructor for Array.
+         * TODO Implement list-initialization.
+         */
+//       Array();
+
+        /*
+         * Destructor for Array.
+         */
+//      ~Array();
 
         /*
          * Return element at index. Is Constant.
@@ -18,6 +29,7 @@ class Array {
         /*
          * Access element at index.
          */
+
         T& operator [](size_t pos) ;
 
         /*
@@ -41,15 +53,16 @@ class Array {
         T& at(size_t pos) ;
 
         /*
-         * Removes element at position. 
-         */
-        const T& del(size_t pos, T& value);
-
-        /*
          * Returns string of elements contained within array.
          */
         std::string to_string() const;
 };
+
+// template <typename T, size_t N>
+// Array<T,N>::Array() {}
+
+// template <typename T, size_t N>
+// Array<T,N>::~Array() = default;
 
 template <typename T, size_t N>
 const T & Array<T,N>::operator[](size_t pos) const {
@@ -58,41 +71,27 @@ const T & Array<T,N>::operator[](size_t pos) const {
 
 template <typename T, size_t N>
 T & Array<T,N>::operator[](size_t pos) {
-    _size++;
     return _data[pos];
 }
 
 template <typename T, size_t N>
-size_t Array<T, N>::size() const { return _size ; }
+size_t Array<T, N>::size() const { return N ; }
 
 template <typename T, size_t N>
 size_t Array<T, N>::max_size() const { return N ; }
 
-// TODO Implement Bound Checking
-
 template <typename T, size_t N>
 const T& Array<T, N>::at(size_t pos) const {
-    if ( pos < 0 || pos >= N)
-        throw std::out_of_range("Parameter was out of bounds.");
-
+   if ( pos >= N )
+       throw std::out_of_range("Parameter was out of bounds.");
     return _data[pos];
 }
-
-// TODO Implement Bound Checking
 
 template <typename T, size_t N>
 T& Array<T, N>::at(size_t pos) {
     if ( pos < 0 || pos >= N)
         throw std::out_of_range("Parameter was out of bounds.");
-
     return _data[pos];
-}
-
-// TODO Implement del
-
-template<typename T, size_t N>
-const T& Array<T, N>::del(size_t pos, T& element) {
-
 }
 
 template <typename T, size_t N>
