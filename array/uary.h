@@ -3,6 +3,11 @@
 #include <exception>
 #include <stdexcept>
 
+/*
+ * 
+ * This is an Unsorted Array with left shifting.
+ *
+ */
 template <typename T, size_t N>
 class UnsortedArray : public Array<T, N> {
     private:    

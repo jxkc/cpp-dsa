@@ -41,7 +41,14 @@ int unsorted_sandbox() {
 }
 
 int main(){
-    array_sandbox();
-    unsorted_sandbox();
+
+    Array<Array<int, 3>, 3> arr3;
+
+
+    arr3.at(0).at(9);
+
+
+    std::cout << arr3.at(0).to_string();
+
     return 0;
 }

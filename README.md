@@ -4,3 +4,6 @@
 
 The aim for this repo is to demonstrate my ability to implement and use Data
 Structures and Algorithms in C++. 
+
+[Array Data Structure](./array/ARRAY.md)
+
